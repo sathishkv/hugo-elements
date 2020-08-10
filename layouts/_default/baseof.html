@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body>
+    <body class="bg-cover" style="background-image: url('{{ .Site.Params.hero }}'); "> 
         {{- partial "header.html" . -}}
-        <div id="content" class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
+        <div id="content" class="flex-1 mx-4 mt-4 sm:mt-16">
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
