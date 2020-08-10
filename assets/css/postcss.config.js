@@ -24,20 +24,18 @@ const purgecss = require('purgecss')({
     }
 })
 
-module.exports = {
-    purge: [],
-    theme: {
-        extend: {},
-    },
-    variants: {},
-    plugins: [        
-        require('postcss-import')({
-            path: [themeDir]
-            }), 
-        require('tailwindcss')(themeDir + 'assets/css/tailwind.config.js'),
-        require('autoprefixer')({
-            path: [themeDir]
-        }),
-        ...(process.env.HUGO_ENVIRONMENT === 'production' ? [purgecss] : [])
-    ]
-}
+export const purge = [];
+export const theme = {
+    extend: {},
+};
+export const variants = {};
+export const plugins = [
+    require('postcss-import')({
+        path: [themeDir]
+    }),
+    require('tailwindcss')(themeDir + 'assets/css/tailwind.config.js'),
+    require('autoprefixer')({
+        path: [themeDir]
+    }),
+    ...(process.env.HUGO_ENVIRONMENT === 'production' ? [purgecss] : [])
+];
