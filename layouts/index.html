@@ -1,6 +1,7 @@
 {{ define "main" }}
-<article class="text-center text-gray-700">
-    <h1 class="text-center font-serif text-gray-700 ont-thin text-5xl">{{ .Title }}</h1>
-    {{ .Content }}
-</article>
+<div class="flex h-screen">
+    <article class="m-auto text-center text-gray-700">
+        <h1 class="-mt-40 {{.Site.Params.titleColor}} text-5xl">{{ .Title }}</h1>
+    </article>
+</div>
 {{ end }}

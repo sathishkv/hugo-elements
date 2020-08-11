@@ -1,0 +1,66 @@
+baseURL = "https://sathishkv.netlify.app/"
+languageCode = "en-us"
+title = "Hugo Elements Example"
+theme = "hugo-elements"
+themesdir = "../.."
+disqusShortname = "username" # delete this to disable disqus comments
+googleAnalytics = ""
+
+[params]
+    author = "Sathish Babu K V"
+    description = "Hugo Elements Theme using Tailwind"
+    copyright = "www.sathishkv.com"
+    githubUsername = "sathishkv"
+    accent = "red"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Muli" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "default"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+    hero = "/img/theme/danielle-macinnes-IuLgi9PWETU-unsplash.jpg"
+    menuBarColor = "bg-orange-700"
+    menuTextColor = "text-gray-100"
+    titleColor = "text-white"
+
+
+[[menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+
+[[menu.main]]
+    url = "/scribble/"
+    name = "Scribble"
+    weight = 4
+
+
+# Social icons to be shown on the right-hand side of the navigation bar.
+# The "name" field should match the name of the icon in Font Awesome.
+# The list of available icons can be found at http://fontawesome.io/icons.
+
+[[menu.icon]]
+    url = "mailto:me@sathishkv.com?subject=%5Bsathishkv.com%5D"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/sathishbabukv/"
+    name = "linkedin"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://twitter.com/sathishkv/"
+    name = "twitter"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://github.com/sathishkv"
+    name = "github"
+    weight = 4
+
+[[menu.icon]]
+    url = "https://medium.com/@sathishkv"
+    name = "medium"
+    weight = 5
+  
