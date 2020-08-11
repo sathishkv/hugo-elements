@@ -1,14 +1,13 @@
 {{ define "main" }}
 <div
     class="py-5 px-2 mx-auto items-center justify-between flex-wrap container rounded-xl bg-white min-h-screen">
-    {{ range (.Paginator 10).Pages }}
+    {{ range .Paginator.Pages }}
 
-    <div class="mb-4 mx-auto py-6 rounded w-full border border-gray-400">
-    <article class="text-black sm:mx-12 mb-4">
-        <div class="text-2xl mb-4"><a class="no-underline hover:underline" href="{{ .Permalink }}">{{ .Title }}</a></div>
-        <div class="text-base">{{ .Summary }}</div>
-    </article>
-    </div>
+    {{ partial "list-item" . }}
+
     {{ end }}
+
+    {{ partial "paginator" . }}
+    </div>
 </div>
 {{ end }}

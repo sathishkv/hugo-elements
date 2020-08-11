@@ -5,19 +5,12 @@ theme = "hugo-elements"
 themesdir = "../.."
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
+paginate = 3
 
 [params]
     author = "Sathish Babu K V"
     description = "Hugo Elements Theme using Tailwind"
     copyright = "www.sathishkv.com"
-    githubUsername = "sathishkv"
-    accent = "red"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Muli" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
     hero = "/img/theme/danielle-macinnes-IuLgi9PWETU-unsplash.jpg"
     menuBarColor = "bg-orange-700"
     menuTextColor = "text-gray-100"

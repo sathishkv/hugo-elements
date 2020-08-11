@@ -1,17 +1,30 @@
 {{ if or .Paginator.HasPrev .Paginator.HasNext }}
 
-<div class="pages">
-
+<div class=" w-auto ml-auto text-2xl">
     {{ if .Paginator.HasPrev }}
-        <a class="icon pages-icon" href="{{ .Paginator.Prev.URL }}" rel="prev">
-            <i class="fa fa-arrow-left"></i>
-        </a>
+    <a class="inline-block float-left mx-1" href="{{ .Paginator.Prev.URL }}" rel="prev">
+        <div class="flex flex-no-wrap text-base">
+            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6">
+                <path fill-rule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <div class="hidden md:block">Previous</div>
+        </div>
+    </a>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a class="icon pages-icon" href="{{ .Paginator.Next.URL }}" rel="next">
-            <i class="fa fa-arrow-right"></i>
-        </a>
+    <a class="inline-block float-right mx-1" href="{{ .Paginator.Next.URL }}" rel="next">
+        <div class="flex flex-no-wrap text-base">
+            <div class="hidden md:block">Next</div>
+            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6">
+                <path fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+    </a>
     {{ end }}
 
 </div>
