@@ -1,6 +1,6 @@
 ---
 title: "Post 3"
-date: 2020-08-11T12:10:18-07:00
+date: 2020-08-05T12:10:18-07:00
 description: "Example taken from https://markdown-it.github.io/"
 draft: false
 ---

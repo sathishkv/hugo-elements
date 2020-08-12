@@ -1,7 +1,17 @@
 {{ define "main" }}
-<div class="flex h-screen">
-    <article class="m-auto text-center text-gray-700">
-        <h1 class="-mt-40 {{.Site.Params.titleColor}} text-5xl">{{ .Title }}</h1>
-    </article>
+<div class="h-screen">
+<div class="flex h-1/2">
+    <div class="m-auto text-center text-gray-700">
+        <h1 class="-mt-20 font-Italianno {{.Site.Params.titleColor}} text-6xl">{{ .Title }}</h1>
+        <div class=" font-Alegreya {{.Site.Params.titleColor}} text-2xl">{{ .Site.Params.Description }}</div>
+    </div>
 </div>
+
+<div class="flex flex-wrap md:flex-no-wrap mb-4 justify-center h-auto">
+    {{ range (.Paginator 4).Pages }}
+    {{ partial "card-item" .}}
+    {{ end }}
+</div>
+</div>
+
 {{ end }}
