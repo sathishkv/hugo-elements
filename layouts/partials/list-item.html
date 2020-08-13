@@ -13,7 +13,9 @@
         </div>
         <div class="flex items-center">
             <div class="text-sm">
-                <p class="text-gray-600">Aug 18</p>
+                {{ if not .PublishDate.IsZero }}
+                <p class="text-gray-600">{{ .PublishDate.Format "2 Jan, 2006" }}</p>
+                {{end}}
             </div>
         </div>
     </div>
