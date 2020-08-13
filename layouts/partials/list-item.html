@@ -1,7 +1,22 @@
-<div class="mb-4 mx-auto py-6 rounded w-full border border-gray-400 shadow-md hover:shadow-xl">
-    <article class="max-w-3xl mx-auto text-black">
-        <div class="text-2xl mb-4"><a class="no-underline hover:underline" href="{{ .Permalink }}">{{ .Title }}</a>
+<div
+    class="max-w-sm w-full h-full lg:max-w-full lg:flex border border-gray-400 shadow-md hover:shadow-xl mb-4 mx-auto rounded">
+    {{ if .Params.CoverImage }}
+    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+        style="background-image: url('{{ .Permalink }}../{{ .Params.CoverImage }}')" title="Woman holding a mug">
+    </div>
+    {{ end }}
+    <div class="bg-white p-4 flex flex-col justify-between leading-normal">
+        <div class="mb-8">
+            <div class="text-gray-900 font-bold text-xl mb-2"><a class="no-underline hover:underline"
+                    href="{{ .Permalink }}">{{ .Title }}</a></div>
+            <p class="text-base">{{ .Summary }}</p>
         </div>
-        <div class="text-base">{{ .Summary }}</div>
-    </article>
+        <div class="flex items-center">
+            <div class="text-sm">
+                {{ if not .PublishDate.IsZero }}
+                <p class="text-gray-600">{{ .PublishDate.Format "2 Jan, 2006" }}</p>
+                {{end}}
+            </div>
+        </div>
+    </div>
 </div>
