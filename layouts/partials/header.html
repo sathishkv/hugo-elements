@@ -45,7 +45,7 @@
             </li>
             {{ end }}
 
-            {{ with .Site.GetPage "/about" }}
+            {{ range where .Site.Pages "Type" "navigation"}}
             <li>
                 <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{.Site.Params.menuTextColor}}">{{ .Title }}</a>
             </li>
