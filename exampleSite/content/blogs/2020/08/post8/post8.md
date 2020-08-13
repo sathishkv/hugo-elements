@@ -9,6 +9,6 @@ images: ["sunset.jpg"]
 
 This is my post 8.
 
-![Sunset](sunset.jpg)
+![Sunset](../sunset.jpg)
 
 ## Heading 2
