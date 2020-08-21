@@ -23,4 +23,16 @@
         {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
     {{ end -}}
+
+    {{ if .Site.GoogleAnalytics }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->  
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', '{{ .Site.GoogleAnalytics }}');
+        </script>
+    {{ end }}
 </head>
