@@ -40,9 +40,11 @@
 
         <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden sm:block mt-2 sm:mt-0 sm:space-x-2">
             {{ range .Site.Sections }}
+            {{ if ne .Type "promo"}}
             <li>
                 <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{.Site.Params.menuTextColor}}">{{ .Title }}</a>
             </li>
+            {{ end }}
             {{ end }}
 
             {{ range where .Site.Pages "Type" "navigation"}}
