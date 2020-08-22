@@ -1,31 +1,7 @@
 {{ define "main" }}
 <div class="min-h-screen">
-<div class="flex h-3/5" >
-    <div class="m-auto text-center text-gray-700">
-        <h1 class=" font-Italianno {{.Site.Params.titleColor}} text-6xl">{{ .Site.Title }}</h1>
-        <div class=" font-Alegreya {{.Site.Params.titleColor}} text-2xl">{{ .Site.Params.Description }}</div>
+    {{ partial "hero" . }}
 
-        <div class="flex flex-wrap mt-8 py-2 overflow-hidden rounded-md items-center justify-between">
-        {{ $promo := .Site.GetPage "promo/nava-rasam.md"}}
-        <a href="{{$promo.Params.PromoLink}}">
-        <div class="h-48 mx-auto bg-contain bg-no-repeat bg-center" 
-            style="background-image: url('{{$promo.Permalink}}../{{$promo.Params.coverImage}}'); ">
-        </div>
-        <div class="m-auto text-md text-red-900 text-center p-2"> {{ $promo.Description }} 
-        </div>
-        </a>
-    </div>
-    </div>
+    {{ partial "top-posts" .}}
 </div>
-
-<div class="flex flex-wrap md:flex-no-wrap mb-4 justify-center h-auto">
-    {{ partial "card-item" $promo}}
-    {{ range (.Paginator 4).Pages }}
-    {{ if and (ne .Type "navigation") (ne .Type "promo")}}
-    {{ partial "card-item" .}}
-    {{ end }}
-    {{ end }}
-</div>
-</div>
-
 {{ end }}

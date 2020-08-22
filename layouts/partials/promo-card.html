@@ -1,0 +1,10 @@
+<div class="flex flex-wrap mt-8 py-2 overflow-hidden rounded-md items-center justify-between">
+    {{ $promo := .Site.GetPage "promo/nava-rasam.md"}}
+    <a href="{{$promo.Params.PromoLink}}">
+        <div class="h-48 mx-auto bg-contain bg-no-repeat bg-center"
+            style="background-image: url('{{$promo.Permalink}}../{{$promo.Params.coverImage}}'); ">
+        </div>
+        <div class="m-auto text-md text-red-900 text-center p-2"> {{ $promo.Description }}
+        </div>
+    </a>
+</div>
