@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body class="font-sans"> 
+    <body class="font-sans bg-cover" style="background-image: url('{{ .Site.Params.hero }}'); "> 
         {{- partial "header.html" . -}}
         <div id="content" class="flex-1 mx-4 mt-4 sm:mt-8">
         {{- block "main" . }}{{- end }}
