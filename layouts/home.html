@@ -1,15 +1,27 @@
 {{ define "main" }}
 <div class="h-screen">
-<div class="flex h-1/2">
+<div class="flex h-3/5 bg-cover bg-center shadow-lg border-gray-400" style="background-image: url('{{ .Site.Params.hero }}'); ">
     <div class="m-auto text-center text-gray-700">
-        <h1 class="-mt-20 font-Italianno {{.Site.Params.titleColor}} text-6xl">{{ .Site.Title }}</h1>
+        <h1 class=" font-Italianno {{.Site.Params.titleColor}} text-6xl">{{ .Site.Title }}</h1>
         <div class=" font-Alegreya {{.Site.Params.titleColor}} text-2xl">{{ .Site.Params.Description }}</div>
+
+        <div class="flex flex-wrap mt-8 py-2 overflow-hidden rounded-md items-center justify-between">
+        {{ $promo := .Site.GetPage "promo/nava-rasam.md"}}
+        <a href="{{$promo.Params.PromoLink}}">
+        <div class="h-48 mx-auto bg-contain bg-no-repeat bg-center" 
+            style="background-image: url('{{$promo.Permalink}}../{{$promo.Params.coverImage}}'); ">
+        </div>
+        <div class="m-auto text-md text-red-900 text-center p-2"> {{ $promo.Description }} 
+        </div>
+        </a>
+    </div>
     </div>
 </div>
 
 <div class="flex flex-wrap md:flex-no-wrap mb-4 justify-center h-auto">
+    {{ partial "card-item" $promo}}
     {{ range (.Paginator 4).Pages }}
-    {{ if ne .Type "navigation" }}
+    {{ if and (ne .Type "navigation") (ne .Type "promo")}}
     {{ partial "card-item" .}}
     {{ end }}
     {{ end }}
