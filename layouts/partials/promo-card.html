@@ -4,7 +4,12 @@
         <div class="h-48 mx-auto bg-contain bg-no-repeat bg-center"
             style="background-image: url('{{$promo.Permalink}}../{{$promo.Params.coverImage}}'); ">
         </div>
-        <div class="m-auto text-md text-red-900 text-center p-2"> {{ $promo.Description }}
+        <div class="relative flex text-md mt-2"> 
+            <span class="inline-flex p-1 border border-gray-500 rounded-md">{{ $promo.Description }}</span>
+            <span class="absolute -mr-1 -mt-1 right-0 top-0 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+              </span>
         </div>
     </a>
 </div>
