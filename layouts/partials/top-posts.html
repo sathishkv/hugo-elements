@@ -1,5 +1,5 @@
-<div class="flex flex-wrap md:flex-no-wrap mb-4 justify-center h-auto">
-    {{ range (.Paginator 4).Pages }}
+<div class="flex flex-wrap md:flex-no-wrap mb-4 mt-2 justify-center h-auto">
+    {{ range (.Paginator 5).Pages }}
     {{ if and (ne .Type "navigation") (ne .Type "promo")}}
     {{ partial "card-item" .}}
     {{ end }}
