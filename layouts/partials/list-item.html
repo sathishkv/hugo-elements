@@ -1,22 +1,23 @@
-<div
-    class="max-w-sm w-full h-full lg:max-w-full lg:flex border border-gray-400 shadow-md hover:shadow-xl mb-4 mx-auto rounded">
-    {{ if .Params.CoverImage }}
-    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-        style="background-image: url('{{ .Permalink }}../{{ .Params.CoverImage }}')">
-    </div>
-    {{ end }}
-    <div class="bg-white p-4 flex flex-col justify-between leading-normal">
-        <div class="mb-8">
-            <div class="text-gray-900 font-bold text-xl mb-2"><a class="no-underline hover:underline"
-                    href="{{ .Permalink }}">{{ .Title }}</a></div>
-            <p class="text-base">{{ .Summary }}</p>
+<a class="no-underline" href="{{ .Permalink }}">
+    <div
+        class="max-w-sm w-full h-full lg:max-w-full lg:flex border border-gray-400 shadow-md hover:shadow-xl mb-4 mx-auto rounded">
+        {{ if .Params.CoverImage }}
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            style="background-image: url('{{ .Permalink }}../{{ .Params.CoverImage }}')">
         </div>
-        <div class="flex items-center">
-            <div class="text-sm">
-                {{ if not .PublishDate.IsZero }}
-                <p class="text-gray-600">{{ .PublishDate.Format "2 Jan, 2006" }}</p>
-                {{end}}
+        {{ end }}
+        <div class="bg-white p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-8">
+                <div class="text-gray-900 font-bold text-xl mb-2">{{ .Title }}</div>
+                <p class="text-base">{{ .Summary }}</p>
+            </div>
+            <div class="flex items-center">
+                <div class="text-sm">
+                    {{ if not .PublishDate.IsZero }}
+                    <p class="text-gray-600">{{ .PublishDate.Format "2 Jan, 2006" }}</p>
+                    {{end}}
+                </div>
             </div>
         </div>
     </div>
-</div>
+</a>

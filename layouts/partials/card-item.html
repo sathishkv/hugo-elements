@@ -1,15 +1,17 @@
-<div class="relative m-4 h-128 w-128 rounded-md overflow-hidden border border-gray-400 bg-white shadow-lg">
-    {{ .Scratch.Set "height" "h-full" }}
-    {{ if .Params.CoverImage }}
+<a class="no-underline" href="{{ .Permalink }}">
+    <div class="relative m-4 h-128 w-128 rounded-md overflow-hidden border border-gray-400 bg-white shadow-lg">
+        {{ .Scratch.Set "height" "h-full" }}
+        {{ if .Params.CoverImage }}
         <img class="w-full h-full object-cover" src="{{  .File.Dir }}{{ .Params.CoverImage }}" />
         {{ .Scratch.Set "height" "h-3/5"}}
-    {{ end }}
+        {{ end }}
 
-    {{ $h := .Scratch.Get "height"}}
-    <div class="absolute bottom-0 p-4 z-10 bg-white {{ $h }} w-full opacity-75">
-        <div class="text-2xl mb-4">
-            <a class="no-underline hover:underline" href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ $h := .Scratch.Get "height"}}
+        <div class="absolute bottom-0 p-4 z-10 bg-white {{ $h }} w-full opacity-75">
+            <div class="text-2xl mb-4">
+                {{ .Title }}
+            </div>
+            <div class="text-base">{{ .Summary }}</div>
         </div>
-        <div class="text-base">{{ .Summary }}</div>
     </div>
-</div>
+</a>
