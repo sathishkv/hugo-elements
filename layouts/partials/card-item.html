@@ -1,5 +1,5 @@
 <a class="no-underline" href="{{ .Permalink }}">
-    <div class="relative m-4 h-128 w-128 rounded-md overflow-hidden border border-gray-400 bg-white shadow-lg">
+    <div class="relative m-4 h-128 w-128 rounded-md overflow-auto border border-gray-400 bg-white shadow-lg">
         {{ .Scratch.Set "height" "h-full" }}
         {{ if .Params.CoverImage }}
         <img class="w-full h-full object-cover" src="{{  .File.Dir }}{{ .Params.CoverImage }}" />
