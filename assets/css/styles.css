@@ -7,3 +7,7 @@
 /* Site Specific */
 @import "assets/css/site";
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Italianno&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
