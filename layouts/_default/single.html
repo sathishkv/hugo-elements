@@ -1,12 +1,12 @@
 {{ define "main" }}
-<div class="py-5 px-2 mx-auto items-center justify-between flex-wrap container bg-white min-h-screen border rounded-lg shadow-md">
+<div class="flex-wrap justify-between container font-sans py-2 px-2 mx-auto items-center min-h-screen">
     <div class="text-3xl font-bold text-black text-center">{{ .Title }}</div> 
     {{ if not .PublishDate.IsZero }}
-        <div class="text-base text-center">{{ .PublishDate.Format "January 2, 2006" }}</div>
+        <div class="text-xs text-center">{{ .PublishDate.Format "January 2, 2006" }}</div>
     {{ end }}
-    <div class="text-base text-center">{{ .Description  }}</div>
+    <div class="text-sm text-center">{{ .Description  }}</div>
     <div class="p-4"></div>
-    <article class="prose max-w-3xl mx-auto text-black">
+    <article class="prose font-sans max-w-3xl mx-auto text-black">
         {{ .Content }}
     </article>
 </div>
