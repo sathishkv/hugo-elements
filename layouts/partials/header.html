@@ -16,7 +16,7 @@
         </div>
 
 
-        <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden sm:block mt-2 sm:mt-0 sm:space-x-2">
+        <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden sm:block mt-2 sm:mt-0 sm:space-x-2 {{ .Site.Params.menuTitleFont }}">
             {{ range .Site.Sections }}
             {{ if ne .Type "promo"}}
             <li>
