@@ -1,9 +1,9 @@
 <header class="w-full">
-    <nav class="flex flex-row justify-between {{ .Site.Params.menuBarColor }} p-1 shadow-md ">
-        <div class="basis-1/3 justify-start items-center {{ .Site.Params.menuTextColor }}"> 
+    <nav class="flex flex-wrap justify-between {{ .Site.Params.menuBarColor }} p-1 shadow-md ">
+        <div class="justify-start {{ .Site.Params.menuTextColor }}"> 
             <a href="{{ .Site.Home.Permalink }}">
             {{ if .Site.Params.menuTitle }}
-                <div class="{{ .Site.Params.menuTitleFont }} {{ .Site.Params.menuTextColor }} font-extralight text-2xl mx-4" >
+                <div class="{{ .Site.Params.menuTitleFont }} {{ .Site.Params.menuTextColor }} font-light text-xl mx-4" >
                     <p>{{ .Site.Params.menuTitle }}</p>
                 </div>
             {{ else }}            
@@ -15,12 +15,8 @@
             </a>
         </div>
 
-        <div class="basis-1/3 justify-center text-center">
-            <h1 class=" font-Italianno {{ .Site.Params.titleColor }} text-4xl">{{ .Site.Title }}</h1>
-        </div>
-
-        <div class="basis-1/3 align-middle my-auto ">
-            <ul id="nav-menu" class="sm:flex w-full sm:w-auto justify-end hidden sm:block sm:space-x-2 {{ .Site.Params.menuTitleFont }}">
+        <div class="align-middle my-auto ">
+            <ul id="nav-menu" class="flex flex-wrap w-full justify-end {{ .Site.Params.menuTitleFont }}">
                 {{ range .Site.Sections }}
                 {{ if ne .Type "promo"}}
                 <li>
