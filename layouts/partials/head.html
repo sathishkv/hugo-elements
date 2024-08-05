@@ -28,9 +28,6 @@
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
     {{ end -}}
 
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-
     {{ if .Site.Config.Services.GoogleAnalytics.ID }}
     <!-- Global site tag (gtag.js) - Google Analytics -->  
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>

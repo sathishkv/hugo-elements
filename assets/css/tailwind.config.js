@@ -32,7 +32,8 @@ module.exports = {
      },
      fontFamily: {
       'Italianno': ['Italianno'],
-      'Alegreya': ['Alegreya Sans SC']
+      'Alegreya': ['Alegreya Sans SC'],
+      'NYCD': ['Nothing You Could Do']
      }
     },
   },
