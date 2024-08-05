@@ -1,7 +1,16 @@
 {{ define "main" }}
 <div class="min-h-screen">
-    {{ partial "hero" . }}
+    <div
+    class="py-5 px-2 mx-auto items-center justify-between flex-wrap container rounded-xl min-h-screen">
+        {{ range .Paginator.Pages }}
 
-    {{ partial "top-posts" .}}
+        {{ if and (ne .Type "navigation") (ne .Type "promo")}}
+        {{ partial "list-item" . }}
+        {{ end }}
+
+        {{ end }}
+
+        {{ partial "paginator" . }}
+    </div>
 </div>
 {{ end }}
