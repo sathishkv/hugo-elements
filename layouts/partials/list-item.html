@@ -1,17 +1,20 @@
-<a class="no-underline" href="{{ .Permalink }}">
-    <div class="max-w-sm w-full lg:max-w-full flex flex-col mb-4 mx-auto">
-        <div class="font-bold text-xl mb-2">{{ .Title }}</div>
 
-        <div class="font-sans flex flex-col">
-            <div class="text-xs mb-2">
-                {{ if not .PublishDate.IsZero }}
-                <p>{{ .PublishDate.Format "2 Jan, 2006" }}</p>
-                {{ end }}
-            </div>
-            <div class="mb-4">
-                <p class="truncate">{{ .Summary }}</p>
-            </div>
-
+<div class="max-w-md w-full lg:max-w-4xl flex flex-col mb-4 mx-auto">
+    <a class="hover:underline hover:underline-offset-2" href="{{ .Permalink }}">        
+        <div class="font-bold text-xl mb-2 ">{{ .Title }}</div>
+    </a>
+    <div class="font-sans flex flex-col">
+        <div class="text-xs mb-2 text-slate-500">
+            {{ if not .PublishDate.IsZero }}
+            <p>{{ .PublishDate.Format "2 Jan, 2006" }}</p>
+            {{ end }}
+        </div>
+        <div class="mb-4">
+            <p class="truncate text-slate-600">{{ .Summary }}</p>
         </div>
     </div>
-</a>
+
+    <div>
+        <hr/>
+    </div>
+</div>
