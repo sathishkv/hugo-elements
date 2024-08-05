@@ -1,10 +1,10 @@
-<header class="w-full px-4 pt-4">
+<header class="w-full">
     <nav class="flex items-center justify-between flex-wrap {{.Site.Params.menuBarColor}} p-1 shadow-md ">
         <div class="flex items-center {{.Site.Params.menuTextColor}}"> 
-            <a href="{{ .Site.Home.Permalink }}" class="font-bold">
+            <a href="{{ .Site.Home.Permalink }}">
             {{ if .Site.Params.menuTitle }}
                 <div class="{{.Site.Params.menuTextColor}} mx-4">
-                    <p class="font-NYCD font-size:text-2xl">Sathish</p>
+                    <p class="{{.Site.Params.menuTitleFont}} text-2xl">Sathish</p>
                 </div>
             {{ else }}            
                 <svg fill="none" class="home w-6 h-6" viewBox="0 0 24 24" stroke="white">

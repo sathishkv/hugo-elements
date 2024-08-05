@@ -3,3 +3,13 @@
   Override this in your site to insert code just before the closing <body> tag.
   For example, to install an analytics tracking package.
 -->
+{{ if .Site.Config.Services.GoogleAnalytics.ID }}
+<!-- Global site tag (gtag.js) - Google Analytics -->  
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag('js', new Date());
+
+gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}');
+</script>

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body class="font-sans bg-cover" style="background-image: url('{{ .Site.Params.hero }}'); "> 
-        {{- partial "header.html" . -}}
-        <div id="content" class="flex-1 mx-4 mt-4 sm:mt-8">
-        {{- block "main" . }}{{- end }}
+    <body class="font-sans {{ .Site.Params.bodyColor }}"> 
+        <div class="">
+            {{- partial "header.html" . -}}
         </div>
-        {{ partial "footer" . }}
+        <div id="content" class="flex-1 mx-4 mt-4 sm:mt-8">
+            {{- block "main" . }}{{- end }}
+        </div>
+        <div class="">
+            {{ partial "footer" . }}
+        </div>
         {{ partial "body-close" . }}
     </body>
 </html>
