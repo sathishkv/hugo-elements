@@ -1,5 +1,5 @@
 <footer class="py-2">
     {{ $copyrightVar := .Site.Params.copyright }}
     {{ $copyright :=  slice "&copy; "  $copyrightVar  "All rights reserved." }}
-    <p class="m-auto text-xs text-center copyright text-gray-600"> &copy; {{.Site.Params.copyright }}. All rights reserved. </p>
+    <p class="m-auto text-xs text-center copyright text-gray-600"> &copy; {{ .Site.Params.copyright }}. All rights reserved. </p>
 </footer>

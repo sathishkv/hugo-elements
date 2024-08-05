@@ -1,10 +1,10 @@
 <header class="w-full">
-    <nav class="flex items-center justify-between flex-wrap {{.Site.Params.menuBarColor}} p-1 shadow-md ">
-        <div class="flex items-center {{.Site.Params.menuTextColor}}"> 
+    <nav class="flex items-center justify-between flex-wrap {{ .Site.Params.menuBarColor }} p-1 shadow-md ">
+        <div class="flex items-center {{ .Site.Params.menuTextColor }}"> 
             <a href="{{ .Site.Home.Permalink }}">
             {{ if .Site.Params.menuTitle }}
-                <div class="{{.Site.Params.menuTextColor}} mx-4">
-                    <p class="{{.Site.Params.menuTitleFont}} text-2xl">Sathish</p>
+                <div class="{{ .Site.Params.menuTitleFont }} {{ .Site.Params.menuTextColor }} font-extralight text-2xl mx-4" >
+                    <p>{{ .Site.Params.menuTitle }}</p>
                 </div>
             {{ else }}            
                 <svg fill="none" class="home w-6 h-6" viewBox="0 0 24 24" stroke="white">
@@ -20,14 +20,14 @@
             {{ range .Site.Sections }}
             {{ if ne .Type "promo"}}
             <li>
-                <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{.Site.Params.menuTextColor}}">{{ .Title }}</a>
+                <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{ .Site.Params.menuTextColor }}">{{ .Title }}</a>
             </li>
             {{ end }}
             {{ end }}
 
             {{ range where .Site.Pages "Type" "navigation"}}
             <li>
-                <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{.Site.Params.menuTextColor}}">{{ .Title }}</a>
+                <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{ .Site.Params.menuTextColor }}">{{ .Title }}</a>
             </li>
             {{ end }}
         </ul>
