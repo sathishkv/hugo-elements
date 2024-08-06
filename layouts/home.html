@@ -4,7 +4,7 @@
     class="py-5 px-2 mx-auto items-center justify-between flex-wrap container rounded-xl min-h-screen">
         {{ range .Paginator.Pages }}
 
-        {{ if and (ne .Type "navigation") (ne .Type "promo")}}
+        {{ if and (ne .Type "navigation") }}
         {{ partial "list-item" . }}
         {{ end }}
 

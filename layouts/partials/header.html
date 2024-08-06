@@ -18,17 +18,9 @@
         <div class="align-middle my-auto ">
             <ul id="nav-menu" class="flex flex-wrap w-full justify-end {{ .Site.Params.menuTitleFont }}">
                 {{ range .Site.Sections }}
-                {{ if ne .Type "promo"}}
-                <li>
-                    <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{ .Site.Params.menuTextColor }}">{{ .Title }}</a>
-                </li>
-                {{ end }}
-                {{ end }}
-
-                {{ range where .Site.Pages "Type" "navigation"}}
-                <li>
-                    <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{ .Site.Params.menuTextColor }}">{{ .Title }}</a>
-                </li>
+                    <li>
+                        <a href="{{ .Permalink }}" class="mx-4 hover:text-orange-600 {{ .Site.Params.menuTextColor }}">{{ .Title }}</a>
+                    </li>
                 {{ end }}
             </ul>
         </div>
