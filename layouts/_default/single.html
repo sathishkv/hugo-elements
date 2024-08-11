@@ -1,12 +1,14 @@
 {{ define "main" }}
-<div class="flex flex-col justify-between container font-sans py-2 px-2 max-w-md w-full lg:max-w-4xl mx-auto items-center min-h-screen">
+<div class="flex flex-col container font-sans py-2 px-2 max-w-md w-full lg:max-w-4xl mx-auto items-center min-h-screen">
     <div class="text-3xl font-bold text-black text-center">{{ .Title }}</div> 
     {{ if not .PublishDate.IsZero }}
         <div class="text-xs text-center">{{ .PublishDate.Format "January 2, 2006" }}</div>
     {{ end }}
-    <div class="text-sm text-center">{{ .Description  }}</div>
+    {{ if .Description }}
+        <div class="text-sm text-center">{{ .Description  }}</div>
+    {{end}}
     <div class="p-4"></div>
-    <article class="prose font-sans w-full text-black">
+    <article class="prose font-sans w-full  text-black">
         {{ .Content }}
     </article>
 </div>
